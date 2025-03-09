@@ -1,0 +1,13 @@
+open_clip_torch
+ftfy regex tqdm
+git+https://github.com/openai/CLIP.git
+colorama
+numpy
+matplotlib
+torchvision
+Pillow
+kornia
+scipy
+safetensors
+tqdm
+#torch - please download as suitable from https://pytorch.org/
