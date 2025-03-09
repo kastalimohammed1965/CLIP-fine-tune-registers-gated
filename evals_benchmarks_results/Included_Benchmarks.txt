@@ -1,0 +1,80 @@
+####################################################
+#						   #
+# These are all done with the benchmarks	   #
+# **included in this repo**			   #
+#						   #
+####################################################
+
+**** Ablated ****: All MLP gates + REG tokens removed. 
+Ablated to be a normal CLIP (keys, params as in pre-trained).
+
+
+# ------ MVT ImageNet/ObjectNet (zero-shot) -------
+
+ViT-L/14 Pre-trained, OpenAI: 					0.8453
+
+ViT-L/14 Register-Tokens, X-GATED, final checkpoint:		0.8686
+
+ViT-L/14 Register-Tokens, X-GATED, checkpoint 12/20: 		0.8830
+
+ViT-L/14 Register-Tokens, X-GATED, ckpt 12/20, ----ABLATED---:	0.8815
+
+
+
+# ------ Linear Probe on ILSVRC2012, val -------
+
+ViT-L/14 Pre-trained, OpenAI: 					Top-1: 69.86% | Top-5: 92.70%
+
+ViT-L/14 Register-Tokens, X-GATED, final checkpoint:		Top-1: 66.43% | Top-5: 91.52%
+
+ViT-L/14 Register-Tokens, X-GATED, checkpoint 12/20: 		Top-1: 67.10% | Top-5: 91.83%
+
+ViT-L/14 Register-Tokens, X-GATED, ckpt 12/20, ----ABLATED---:	Top-1: 68.99% | Top-5: 92.64%
+
+
+
+# ------ Modality Gap etc. -------
+
+
+ViT-L/14 Pre-trained, OpenAI: 
+
+Modality Gap (Euclidean): 		0.8276			bad.
+Jensen-Shannon Divergence (JSD): 	0.5200
+Wasserstein Distance: 			0.4084
+Image-Text Cosine Similarity - Mean: 0.2723, Std Dev: 0.0362
+Text-Text Cosine Similarity - Mean: 0.6807, Std Dev: 0.1344
+
+
+ViT-L/14 Register-Tokens, X-GATED, final checkpoint:
+
+Modality Gap (Euclidean): 		0.4740			!!!!!
+Jensen-Shannon Divergence (JSD): 	0.1601
+Wasserstein Distance: 			0.1742
+Image-Text Cosine Similarity - Mean: 0.4926, Std Dev: 0.0814
+Text-Text Cosine Similarity - Mean: 0.6657, Std Dev: 0.1671
+
+
+ViT-L/14 Register-Tokens, X-GATED, checkpoint 12/20:
+
+Modality Gap (Euclidean): 		0.5395
+Jensen-Shannon Divergence (JSD): 	0.1303
+Wasserstein Distance: 			0.2102
+Image-Text Cosine Similarity - Mean: 0.4794, Std Dev: 0.0758
+Text-Text Cosine Similarity - Mean: 0.6896, Std Dev: 0.1535
+
+
+ViT-L/14 Register-Tokens, X-GATED, ckpt 12/20, ----ABLATED---:
+
+Modality Gap (Euclidean):		0.7486
+Jensen-Shannon Divergence (JSD): 	0.3310
+Wasserstein Distance: 			0.3262
+Image-Text Cosine Similarity - Mean: 0.3634, Std Dev: 0.0537
+Text-Text Cosine Similarity - Mean: 0.6896, Std Dev: 0.1535
+
+
+Some new representations are retained after ablation.
+But the new parameters seem to be truly bridging the modality gap!
+
+Best modality gap I previously got with a "normal" fine-tune, 
+i.e. no GATE + REG, 20 Epochs: 		0.7800
+

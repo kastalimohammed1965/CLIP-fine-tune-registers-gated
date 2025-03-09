@@ -1,0 +1,230 @@
+####################################################
+#						   #
+# These are all done with:			   #
+# https://github.com/LAION-AI/CLIP_benchmark       #
+#						   #
+####################################################
+
+**** Ablated ****: All MLP gates + REG tokens removed. 
+Ablated to be a normal CLIP (keys, params as in pre-trained).
+
+
+# ------ VoC-2007 multilabel -------
+
+ViT-L/14 Pre-trained, OpenAI:
+Overall mean average precision: 0.7615
+
+Class: aeroplane, AveragePrecision: 0.82651287317276
+Class: bicycle, AveragePrecision: 0.873720109462738
+Class: bird, AveragePrecision: 0.8149711489677429
+Class: boat, AveragePrecision: 0.8685032725334167
+Class: bottle, AveragePrecision: 0.42324164509773254
+Class: bus, AveragePrecision: 0.7793835997581482
+Class: car, AveragePrecision: 0.8311249017715454
+Class: cat, AveragePrecision: 0.9743221402168274
+Class: chair, AveragePrecision: 0.45522356033325195
+Class: cow, AveragePrecision: 0.8973283767700195
+Class: diningtable, AveragePrecision: 0.45144808292388916
+Class: dog, AveragePrecision: 0.9560895562171936
+Class: horse, AveragePrecision: 0.9868205189704895
+Class: motorbike, AveragePrecision: 0.926267683506012
+Class: person, AveragePrecision: 0.7519415616989136
+Class: pottedplant, AveragePrecision: 0.17691059410572052
+Class: sheep, AveragePrecision: 0.9752950668334961
+Class: sofa, AveragePrecision: 0.6766625046730042
+Class: train, AveragePrecision: 0.9716132879257202
+Class: tvmonitor, AveragePrecision: 0.6131027340888977
+
+ViT-L/14 Register-Tokens, X-GATED, final checkpoint:
+Overall mean average precision: 0.8140
+
+Class: aeroplane, AveragePrecision: 0.8720821738243103
+Class: bicycle, AveragePrecision: 0.8916574120521545
+Class: bird, AveragePrecision: 0.9202173948287964
+Class: boat, AveragePrecision: 0.8373425602912903
+Class: bottle, AveragePrecision: 0.6295650601387024
+Class: bus, AveragePrecision: 0.8137983679771423
+Class: car, AveragePrecision: 0.8289031386375427
+Class: cat, AveragePrecision: 0.9687535166740417
+Class: chair, AveragePrecision: 0.49915188550949097
+Class: cow, AveragePrecision: 0.8483248353004456
+Class: diningtable, AveragePrecision: 0.8030986785888672
+Class: dog, AveragePrecision: 0.969376802444458
+Class: horse, AveragePrecision: 0.9929718375205994
+Class: motorbike, AveragePrecision: 0.9393101334571838
+Class: person, AveragePrecision: 0.7313207387924194
+Class: pottedplant, AveragePrecision: 0.4007468521595001
+Class: sheep, AveragePrecision: 0.9469830393791199
+Class: sofa, AveragePrecision: 0.6661054491996765
+Class: train, AveragePrecision: 0.9667081832885742
+Class: tvmonitor, AveragePrecision: 0.7536443471908569
+
+
+ViT-L/14 Register-Tokens, X-GATED, checkpoint 12/20:
+Overall mean average precision: 0.8471
+
+Class: aeroplane, AveragePrecision: 0.9351271986961365
+Class: bicycle, AveragePrecision: 0.907365620136261
+Class: bird, AveragePrecision: 0.9388460516929626
+Class: boat, AveragePrecision: 0.9051951169967651
+Class: bottle, AveragePrecision: 0.6221855282783508
+Class: bus, AveragePrecision: 0.8373295664787292
+Class: car, AveragePrecision: 0.8559885621070862
+Class: cat, AveragePrecision: 0.9759178757667542
+Class: chair, AveragePrecision: 0.619179368019104
+Class: cow, AveragePrecision: 0.9512103199958801
+Class: diningtable, AveragePrecision: 0.8116869330406189
+Class: dog, AveragePrecision: 0.9710468053817749
+Class: horse, AveragePrecision: 0.9885184168815613
+Class: motorbike, AveragePrecision: 0.9549166560173035
+Class: person, AveragePrecision: 0.833842396736145
+Class: pottedplant, AveragePrecision: 0.498517245054245
+Class: sheep, AveragePrecision: 0.9445500373840332
+Class: sofa, AveragePrecision: 0.7267963290214539
+Class: train, AveragePrecision: 0.9643718600273132
+Class: tvmonitor, AveragePrecision: 0.7002550959587097
+
+
+ViT-L/14 Register-Tokens, X-GATED, ckpt 12/20, ----ABLATED---:
+Overall mean average precision: 0.8247
+
+Class: aeroplane, AveragePrecision: 0.9009130597114563
+Class: bicycle, AveragePrecision: 0.9159764051437378
+Class: bird, AveragePrecision: 0.8941738605499268
+Class: boat, AveragePrecision: 0.876220166683197
+Class: bottle, AveragePrecision: 0.5561160445213318
+Class: bus, AveragePrecision: 0.8198965191841125
+Class: car, AveragePrecision: 0.8582084774971008
+Class: cat, AveragePrecision: 0.9659450650215149
+Class: chair, AveragePrecision: 0.6014823913574219
+Class: cow, AveragePrecision: 0.9348070621490479
+Class: diningtable, AveragePrecision: 0.7332088351249695
+Class: dog, AveragePrecision: 0.9527779817581177
+Class: horse, AveragePrecision: 0.9921744465827942
+Class: motorbike, AveragePrecision: 0.9692050218582153
+Class: person, AveragePrecision: 0.8163086771965027
+Class: pottedplant, AveragePrecision: 0.44148367643356323
+Class: sheep, AveragePrecision: 0.9633208513259888
+Class: sofa, AveragePrecision: 0.7121235728263855
+Class: train, AveragePrecision: 0.9738906621932983
+Class: tvmonitor, AveragePrecision: 0.6159994602203369
+
+
+
+# ------ MSCOCO retrieval -------
+
+ViT-L/14 Pre-trained, OpenAI:
+image_retrieval_recall@5: 0.2194, text_retrieval_recall@5: 0.3034
+
+ViT-L/14 Register-Tokens, X-GATED, final checkpoint:
+image_retrieval_recall@5: 0.3565, text_retrieval_recall@5: 0.5425
+
+ViT-L/14 Register-Tokens, X-GATED, checkpoint 12/20:
+image_retrieval_recall@5: 0.3532, text_retrieval_recall@5: 0.5278
+
+ViT-L/14 Register-Tokens, X-GATED, ckpt 12/20, ----ABLATED---:
+image_retrieval_recall@5: 0.3349, text_retrieval_recall@5": 0.5086
+
+
+
+# ------ Linear Probe, CIFAR10 -------
+
+ViT-L/14 Pre-trained, OpenAI:
+lp_acc1: 0.9535, lp_acc5: 0.9966, lp_mean_per_class_recall: 0.9535
+
+ViT-L/14 Register-Tokens, X-GATED, final checkpoint:
+lp_acc1: 0.9813, lp_acc5: 0.9997, lp_mean_per_class_recall: 0.9813
+
+ViT-L/14 Register-Tokens, X-GATED, checkpoint 12/20:
+lp_acc1: 0.9813, lp_acc5: 0.9997, lp_mean_per_class_recall: 0.9813
+
+ViT-L/14 Register-Tokens, X-GATED, ckpt 12/20, ----ABLATED---:
+lp_acc1: 0.9811, lp_acc5: 0.9997, lp_mean_per_class_recall: 0.9811
+
+
+
+# ------ Linear Probe, CIFAR10 - details -------
+
+ViT-L/14 Pre-trained, OpenAI:
+
+              precision    recall  f1-score   support
+
+           0      0.990     0.950     0.969      1000
+           1      0.991     0.968     0.979      1000
+           2      0.992     0.857     0.920      1000
+           3      0.943     0.933     0.938      1000
+           4      0.936     0.966     0.951      1000
+           5      0.917     0.954     0.935      1000
+           6      0.860     0.982     0.917      1000
+           7      0.994     0.955     0.974      1000
+           8      0.984     0.980     0.982      1000
+           9      0.953     0.990     0.971      1000
+
+    accuracy                          0.954     10000
+   macro avg      0.956     0.954     0.954     10000
+weighted avg      0.956     0.954     0.954     10000
+
+
+
+ViT-L/14 Register-Tokens, X-GATED, final checkpoint:
+
+              precision    recall  f1-score   support
+
+           0      0.991     0.979     0.985      1000
+           1      0.989     0.992     0.991      1000
+           2      0.986     0.979     0.982      1000
+           3      0.954     0.954     0.954      1000
+           4      0.986     0.978     0.982      1000
+           5      0.968     0.973     0.971      1000
+           6      0.979     0.989     0.984      1000
+           7      0.989     0.989     0.989      1000
+           8      0.986     0.990     0.988      1000
+           9      0.985     0.990     0.988      1000
+
+    accuracy                          0.981     10000
+   macro avg      0.981     0.981     0.981     10000
+weighted avg      0.981     0.981     0.981     10000
+
+
+ViT-L/14 Register-Tokens, X-GATED, checkpoint 12/20:
+
+              precision    recall  f1-score   support
+
+           0      0.991     0.979     0.985      1000
+           1      0.989     0.992     0.991      1000
+           2      0.986     0.979     0.982      1000
+           3      0.954     0.954     0.954      1000
+           4      0.986     0.978     0.982      1000
+           5      0.968     0.973     0.971      1000
+           6      0.979     0.989     0.984      1000
+           7      0.989     0.989     0.989      1000
+           8      0.986     0.990     0.988      1000
+           9      0.985     0.990     0.988      1000
+
+    accuracy                          0.981     10000
+   macro avg      0.981     0.981     0.981     10000
+weighted avg      0.981     0.981     0.981     10000
+
+
+ViT-L/14 Register-Tokens, X-GATED, ckpt 12/20, ----ABLATED---:
+
+              precision    recall  f1-score   support
+
+           0      0.990     0.979     0.984      1000
+           1      0.989     0.992     0.991      1000
+           2      0.985     0.979     0.982      1000
+           3      0.952     0.955     0.954      1000
+           4      0.985     0.979     0.982      1000
+           5      0.969     0.970     0.970      1000
+           6      0.980     0.989     0.985      1000
+           7      0.989     0.988     0.988      1000
+           8      0.986     0.990     0.988      1000
+           9      0.986     0.990     0.988      1000
+
+    accuracy                          0.981     10000
+   macro avg      0.981     0.981     0.981     10000
+weighted avg      0.981     0.981     0.981     10000
+
+
+
+Note: Saturation @ Linear Probe. Not very meaningful.
