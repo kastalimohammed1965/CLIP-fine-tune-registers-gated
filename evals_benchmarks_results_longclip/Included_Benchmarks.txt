@@ -1,0 +1,65 @@
+####################################################
+#						   #
+# These are all done with the benchmarks	   #
+# **included in this repo**			   #
+#						   #
+####################################################
+
+
+
+
+# ------ MVT ImageNet/ObjectNet (zero-shot) -------
+
+LongCLIP-L Original: 						0.8103
+
+
+Long-ViT-L/14 Register-Tokens, X-GATED, balanced, ckpt12: 	0.8724
+
+
+Long-ViT-L/14 Register-Tokens, X-GATED, final ckpt20: 		0.8698
+
+
+
+# ------ Linear Probe on ILSVRC2012, val -------
+
+
+LongCLIP-L Original:						Top-1: 66.95% | Top-5: 91.87%
+
+
+Long-ViT-L/14 Register-Tokens, X-GATED, balanced, ckpt12: 	Top-1: 66.84% | Top-5: 91.70%
+
+
+Long-ViT-L/14 Register-Tokens, X-GATED, final ckpt20:		Top-1: 66.25% | Top-5: 91.30%
+
+
+
+# ------ Modality Gap etc. -------
+
+
+LongCLIP-L Original:
+
+Model: oai-clip - Modality Gap (Euclidean): 			1.0672
+Model: oai-clip - Image-Text Cosine Similarity - 		Mean: 0.2666, Std Dev: 0.0191
+Model: oai-clip - Text-Text Cosine Similarity - 		Mean: 0.8421, Std Dev: 0.0707
+Model: oai-clip - Jensen-Shannon Divergence (JSD): 		0.3847
+Model: oai-clip - Wasserstein Distance: 			0.5755
+
+
+
+Long-ViT-L/14 Register-Tokens, X-GATED, balanced, ckpt12:
+
+Modality Gap (Euclidean): 					0.5781
+Image-Text Cosine Similarity - 					Mean: 0.4711, Std Dev: 0.0726
+Text-Text Cosine Similarity - 					Mean: 0.7046, Std Dev: 0.1498
+Jensen-Shannon Divergence (JSD): 				0.1894
+Wasserstein Distance: 						0.2335
+
+
+
+Long-ViT-L/14 Register-Tokens, X-GATED, final ckpt20:
+
+Modality Gap (Euclidean): 					0.5491
+Image-Text Cosine Similarity - 					Mean: 0.4717, Std Dev: 0.0783
+Text-Text Cosine Similarity - 					Mean: 0.6907, Std Dev: 0.1586
+Jensen-Shannon Divergence (JSD): 				0.1763
+Wasserstein Distance: 						0.2191

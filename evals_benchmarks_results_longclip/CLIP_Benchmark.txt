@@ -1,0 +1,126 @@
+####################################################
+#						   #
+# These are all done with:			   #
+# https://github.com/LAION-AI/CLIP_benchmark       #
+#						   #
+####################################################
+
+
+
+
+# ------ VoC-2007 multilabel -------
+
+
+LongCLIP-L Original:
+mean_average_precision: 0.8221
+
+Class: aeroplane, AveragePrecision: 0.9416600465774536
+Class: bicycle, AveragePrecision: 0.9260855913162231
+Class: bird, AveragePrecision: 0.8200138807296753
+Class: boat, AveragePrecision: 0.8592302203178406
+Class: bottle, AveragePrecision: 0.5242369771003723
+Class: bus, AveragePrecision: 0.8433467745780945
+Class: car, AveragePrecision: 0.8730798363685608
+Class: cat, AveragePrecision: 0.9812166094779968
+Class: chair, AveragePrecision: 0.5396106839179993
+Class: cow, AveragePrecision: 0.9434609413146973
+Class: diningtable, AveragePrecision: 0.5718556046485901
+Class: dog, AveragePrecision: 0.9709914922714233
+Class: horse, AveragePrecision: 0.9935927987098694
+Class: motorbike, AveragePrecision: 0.9565066695213318
+Class: person, AveragePrecision: 0.8004075288772583
+Class: pottedplant, AveragePrecision: 0.3060445785522461
+Class: sheep, AveragePrecision: 0.9769818186759949
+Class: sofa, AveragePrecision: 0.7013379335403442
+Class: train, AveragePrecision: 0.9733438491821289
+Class: tvmonitor, AveragePrecision: 0.6614660620689392
+
+
+
+Long-ViT-L/14 Register-Tokens, X-GATED, balanced, ckpt12:
+mean_average_precision": 0.8403
+
+Class: aeroplane, AveragePrecision: 0.976256251335144
+Class: bicycle, AveragePrecision: 0.9199316501617432
+Class: bird, AveragePrecision: 0.925448477268219
+Class: boat, AveragePrecision: 0.9128152132034302
+Class: bottle, AveragePrecision: 0.6130671501159668
+Class: bus, AveragePrecision: 0.8480930924415588
+Class: car, AveragePrecision: 0.8498607277870178
+Class: cat, AveragePrecision: 0.9743820428848267
+Class: chair, AveragePrecision: 0.5750418305397034
+Class: cow, AveragePrecision: 0.9340089559555054
+Class: diningtable, AveragePrecision: 0.8114522099494934
+Class: dog, AveragePrecision: 0.9753371477127075
+Class: horse, AveragePrecision: 0.9883319139480591
+Class: motorbike, AveragePrecision: 0.9434450268745422
+Class: person, AveragePrecision: 0.7925959825515747
+Class: pottedplant, AveragePrecision: 0.3968816101551056
+Class: sheep, AveragePrecision: 0.9362050890922546
+Class: sofa, AveragePrecision: 0.721649169921875
+Class: train, AveragePrecision: 0.972156822681427
+Class: tvmonitor, AveragePrecision: 0.7382668256759644
+
+
+
+Long-ViT-L/14 Register-Tokens, X-GATED, final ckpt20:
+Overall mean average precision: 0.8066
+
+Class: aeroplane, AveragePrecision: 0.8040523529052734
+Class: bicycle, AveragePrecision: 0.9104623198509216
+Class: bird, AveragePrecision: 0.8071351647377014
+Class: boat, AveragePrecision: 0.8280792832374573
+Class: bottle, AveragePrecision: 0.6577378511428833
+Class: bus, AveragePrecision: 0.7765930891036987
+Class: car, AveragePrecision: 0.8428841233253479
+Class: cat, AveragePrecision: 0.9715842604637146
+Class: chair, AveragePrecision: 0.507646918296814
+Class: cow, AveragePrecision: 0.8453853726387024
+Class: diningtable, AveragePrecision: 0.8094873428344727
+Class: dog, AveragePrecision: 0.9696299433708191
+Class: horse, AveragePrecision: 0.9793599247932434
+Class: motorbike, AveragePrecision: 0.9261887669563293
+Class: person, AveragePrecision: 0.770743727684021
+Class: pottedplant, AveragePrecision: 0.4401986002922058
+Class: sheep, AveragePrecision: 0.9244537353515625
+Class: sofa, AveragePrecision: 0.7233660817146301
+Class: train, AveragePrecision: 0.9610830545425415
+Class: tvmonitor, AveragePrecision: 0.6752752661705017
+
+
+
+
+
+# ------ MSCOCO retrieval -------
+
+
+LongCLIP-L Original:
+image_retrieval_recall@5: 0.2761, text_retrieval_recall@5: 0.3314
+
+
+Long-ViT-L/14 Register-Tokens, X-GATED, balanced, ckpt12:
+image_retrieval_recall@5: 0.3663, "text_retrieval_recall@5": 0.5398
+
+
+Long-ViT-L/14 Register-Tokens, X-GATED, final ckpt20:
+image_retrieval_recall@5: 0.3758, text_retrieval_recall@5: 0.5620
+
+
+
+
+
+# ------ Linear Probe, CIFAR10 -------
+
+LongCLIP-L Original:
+lp_acc1: 0.9809, lp_acc5: 0.9998, lp_mean_per_class_recall: 0.9809
+
+
+Long-ViT-L/14 Register-Tokens, X-GATED, balanced, ckpt12:
+lp_acc1: 0.9812, lp_acc5: 0.9997, lp_mean_per_class_recall: 0.9812
+
+
+Long-ViT-L/14 Register-Tokens, X-GATED, final ckpt20:
+lp_acc1: 0.9812, lp_acc5: 0.9997, lp_mean_per_class_recall: 0.9812
+
+
+Note: Saturation.
