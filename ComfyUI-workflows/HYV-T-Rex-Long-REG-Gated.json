@@ -1,0 +1,794 @@
+{
+  "last_node_id": 95,
+  "last_link_id": 107,
+  "nodes": [
+    {
+      "id": 11,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        1130,
+        70
+      ],
+      "size": [
+        632.9049682617188,
+        838.323974609375
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 101
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "meta_batch",
+          "type": "VHS_BatchManager",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 24,
+        "loop_count": 0,
+        "filename_prefix": "HunyuanVideo",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 19,
+        "save_metadata": false,
+        "trim_to_audio": false,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "HunyuanVideo_00002.mp4",
+            "subfolder": "",
+            "type": "output",
+            "format": "video/h264-mp4",
+            "frame_rate": 24,
+            "workflow": "HunyuanVideo_00002.png",
+            "fullpath": "C:\\Users\\zer0int\\ComfyUI\\output\\HunyuanVideo_00002.mp4"
+          },
+          "muted": false
+        }
+      }
+    },
+    {
+      "id": 34,
+      "type": "HyVideoDecode",
+      "pos": [
+        910,
+        -200
+      ],
+      "size": [
+        315,
+        150
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 67
+        },
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 62
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            97,
+            100
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "HyVideoDecode"
+      },
+      "widgets_values": [
+        true,
+        8,
+        256,
+        true
+      ]
+    },
+    {
+      "id": 53,
+      "type": "HyVideoSampler",
+      "pos": [
+        751.7067260742188,
+        85.19325256347656
+      ],
+      "size": [
+        315,
+        630
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "HYVIDEOMODEL",
+          "link": 106
+        },
+        {
+          "name": "hyvid_embeds",
+          "type": "HYVIDEMBEDS",
+          "link": 83
+        },
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "stg_args",
+          "type": "STGARGS",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "context_options",
+          "type": "COGCONTEXT",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "feta_args",
+          "type": "FETAARGS",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "teacache_args",
+          "type": "TEACACHEARGS",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "links": [
+            62
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "HyVideoSampler"
+      },
+      "widgets_values": [
+        720,
+        576,
+        121,
+        50,
+        8,
+        9,
+        1094046096686704,
+        "fixed",
+        true,
+        1,
+        "FlowMatchDiscreteScheduler"
+      ]
+    },
+    {
+      "id": 55,
+      "type": "HyVideoTorchCompileSettings",
+      "pos": [
+        -610.707763671875,
+        88.29212188720703
+      ],
+      "size": [
+        441,
+        274
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "torch_compile_args",
+          "type": "COMPILEARGS",
+          "links": [
+            105
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "HyVideoTorchCompileSettings"
+      },
+      "widgets_values": [
+        "inductor",
+        false,
+        "default",
+        false,
+        256,
+        true,
+        true,
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "id": 56,
+      "type": "DownloadAndLoadHyVideoTextEncoder",
+      "pos": [
+        -156.29214477539062,
+        401.70782470703125
+      ],
+      "size": [
+        441,
+        178
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "hyvid_text_encoder",
+          "type": "HYVIDTEXTENCODER",
+          "links": [
+            82
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DownloadAndLoadHyVideoTextEncoder"
+      },
+      "widgets_values": [
+        "Kijai/llava-llama-3-8b-text-encoder-tokenizer",
+        "disabled",
+        "bf16",
+        true,
+        2,
+        "disabled"
+      ]
+    },
+    {
+      "id": 57,
+      "type": "HyVideoVAELoader",
+      "pos": [
+        -202.8090057373047,
+        -95.50558471679688
+      ],
+      "size": [
+        420,
+        82
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "compile_args",
+          "type": "COMPILEARGS",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": [
+            67
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "HyVideoVAELoader"
+      },
+      "widgets_values": [
+        "kijai-hunyuan_video_vae_bf16.safetensors",
+        "bf16"
+      ]
+    },
+    {
+      "id": 69,
+      "type": "HyVideoBlockSwap",
+      "pos": [
+        -507.8427429199219,
+        442.24713134765625
+      ],
+      "size": [
+        315,
+        130
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "block_swap_args",
+          "type": "BLOCKSWAPARGS",
+          "links": [
+            107
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "HyVideoBlockSwap"
+      },
+      "widgets_values": [
+        20,
+        0,
+        false,
+        false
+      ]
+    },
+    {
+      "id": 70,
+      "type": "HyVideoTextEncode",
+      "pos": [
+        491.8824768066406,
+        779.8854370117188
+      ],
+      "size": [
+        320.3617248535156,
+        323.4506530761719
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_encoders",
+          "type": "HYVIDTEXTENCODER",
+          "link": 82
+        },
+        {
+          "name": "custom_prompt_template",
+          "type": "PROMPT_TEMPLATE",
+          "link": 85,
+          "shape": 7
+        },
+        {
+          "name": "clip_l",
+          "type": "CLIP",
+          "link": 102,
+          "shape": 7
+        },
+        {
+          "name": "hyvid_cfg",
+          "type": "HYVID_CFG",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "hyvid_embeds",
+          "type": "HYVIDEMBEDS",
+          "links": [
+            83
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "HyVideoTextEncode"
+      },
+      "widgets_values": [
+        "The T-Rex fiercely pulling against a heavy-duty crane, with ropes straining and the ground trembling from its forceful steps. Then the crane breaks and shatters on the ground, with the T-Rex running away scared",
+        true,
+        "custom"
+      ]
+    },
+    {
+      "id": 72,
+      "type": "HyVideoCustomPromptTemplate",
+      "pos": [
+        -150,
+        650
+      ],
+      "size": [
+        560,
+        190
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "hyvid_prompt_template",
+          "type": "PROMPT_TEMPLATE",
+          "links": [
+            85
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "HyVideoCustomPromptTemplate"
+      },
+      "widgets_values": [
+        "<|start_header_id|>system<|end_header_id|>\nDescribe the video by detailing the following aspects:\n1. The main content and theme of the video.\n2. The color, shape, size, texture, quantity, text, and spatial relationships of the objects.\n3. Actions, events, behaviors temporal relationships, physical movement changes of the objects.\n4. background environment, light, style and atmosphere.\n5. camera angles, movements, and transitions used in the video:\n<|eot_id|><|start_header_id|>user<|end_header_id|>{}<|eot_id|>",
+        95
+      ]
+    },
+    {
+      "id": 73,
+      "type": "HyVideoCustomPromptTemplate",
+      "pos": [
+        -660,
+        750
+      ],
+      "size": [
+        390,
+        180
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "hyvid_prompt_template",
+          "type": "PROMPT_TEMPLATE",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "HyVideoCustomPromptTemplate"
+      },
+      "widgets_values": [
+        "<|start_header_id|>system<|end_header_id|>\nDescribe the video by detailing the following aspects:\n1. content.\n2. color, shape, spatial relationship.\n3. actions, change over time.\n4. background, detail, atmospherics.\n5. camera angle or movement, changes over time.\n<|eot_id|><|start_header_id|>user<|end_header_id|>{}<|eot_id|>",
+        62
+      ]
+    },
+    {
+      "id": 89,
+      "type": "PreviewImage",
+      "pos": [
+        1340,
+        -270
+      ],
+      "size": [
+        620,
+        246
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 12,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 97
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 91,
+      "type": "ReverseImageBatch",
+      "pos": [
+        1125.65380859375,
+        -310.4674072265625
+      ],
+      "size": [
+        239.40000915527344,
+        26
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 100
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            101
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ReverseImageBatch"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 92,
+      "type": "CLIPLoader",
+      "pos": [
+        -188.02549743652344,
+        928.6406860351562
+      ],
+      "size": [
+        527.0227661132812,
+        93.0670394897461
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            102
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPLoader"
+      },
+      "widgets_values": [
+        "Long-ViT-L-14-REG-GATED-full-model.safetensors",
+        "stable_diffusion",
+        "default"
+      ]
+    },
+    {
+      "id": 94,
+      "type": "HunyuanNyanCLIP",
+      "pos": [
+        235.00628662109375,
+        -6.49125862121582
+      ],
+      "size": [
+        463.5934753417969,
+        338
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "compile_args",
+          "type": "COMPILEARGS",
+          "link": 105,
+          "shape": 7
+        },
+        {
+          "name": "block_swap_args",
+          "type": "BLOCKSWAPARGS",
+          "link": 107,
+          "shape": 7
+        },
+        {
+          "name": "lora",
+          "type": "HYVIDLORA",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "HYVIDEOMODEL",
+          "links": [
+            106
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "HunyuanNyanCLIP"
+      },
+      "widgets_values": [
+        "True",
+        "Factor",
+        1.5,
+        "Factor",
+        0.9,
+        "hunyuan_video_720_cfgdistill_fp8_e4m3fn.safetensors",
+        "bf16",
+        "disabled",
+        "main_device",
+        "sageattn_varlen",
+        false
+      ]
+    },
+    {
+      "id": 95,
+      "type": "Note",
+      "pos": [
+        -247.68321228027344,
+        1164.74072265625
+      ],
+      "size": [
+        635.0894775390625,
+        586.9783935546875
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "A sleek 1979 Dodge Charger in the shape of a steam locomotive pulling several vintage red boxcars chugs along an old-fashioned railroad track at sunset. The sleek design of the train is heavily inspired by the muscle car aesthetic. The sky is painted with hues of orange and pink, casting a warm glow over the rusted metal and wooden ties of the track. Rolling hills in the background add to the nostalgic ambiance of this retrofitted train ride through the countryside.\n\n\n16mm lens, f/2.4, High-Key color grading with warm undertones, view from a shopping cart being pushed. A crowded grocery store aisle is in chaos as people from diverse ages and backgrounds frantically grab any remaining food items, sending cans and packages flying. Amidst the mayhem, a young mother clutches a carton of milk, her eyes wild with desperation. In slow motion.\n\nVery high quality 4k video, 25mm lens, f/1.4, high contrast color grading with vibrant reds and dark silhouettes. The lighting is a chilling foggy night with only the moon casting eerie shadows. In the dimly lit garden, a masked killer stalks a trembling young actress from a low angle with a menacing close-up of their gleaming knife blade. The camera quickly pans right to reveal the horror movie iconography of a bloodstained dagger, then back left for a high-angle shot of the masked villain standing in\n\n\nIn this surreal nightmare documentary, a sizable spider with a human face is peacefully savoring her breakfast at a diner. The spider has a spider body, but a lady's face on the front, and regular human hands at the end of the spider legs.\n\n\nThe scene unfolds in a neon-lit bowling alley, where two combatants clash with ferocity amidst the sound of crashing pins and thundering ball returns. Each uses bowling pins as makeshift weapons, their swings carving through the air with a satisfying whoosh as sparks fly from the impact of pin against pin. The fight weaves between the glossy lanes, with one combatant leaping onto the ball return for a daring strike while the other deflects with a pin shield, sending stray bowling balls rolling wildly across the floor.\n\n\nTwo people having an epic battle in a bowling alley. Using bowling pins as weapons."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    }
+  ],
+  "links": [
+    [
+      62,
+      53,
+      0,
+      34,
+      1,
+      "LATENT"
+    ],
+    [
+      67,
+      57,
+      0,
+      34,
+      0,
+      "VAE"
+    ],
+    [
+      82,
+      56,
+      0,
+      70,
+      0,
+      "HYVIDTEXTENCODER"
+    ],
+    [
+      83,
+      70,
+      0,
+      53,
+      1,
+      "HYVIDEMBEDS"
+    ],
+    [
+      85,
+      72,
+      0,
+      70,
+      1,
+      "PROMPT_TEMPLATE"
+    ],
+    [
+      97,
+      34,
+      0,
+      89,
+      0,
+      "IMAGE"
+    ],
+    [
+      100,
+      34,
+      0,
+      91,
+      0,
+      "IMAGE"
+    ],
+    [
+      101,
+      91,
+      0,
+      11,
+      0,
+      "IMAGE"
+    ],
+    [
+      102,
+      92,
+      0,
+      70,
+      2,
+      "CLIP"
+    ],
+    [
+      105,
+      55,
+      0,
+      94,
+      0,
+      "COMPILEARGS"
+    ],
+    [
+      106,
+      94,
+      0,
+      53,
+      0,
+      "HYVIDEOMODEL"
+    ],
+    [
+      107,
+      69,
+      0,
+      94,
+      1,
+      "BLOCKSWAPARGS"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "Hunyuan",
+      "bounding": [
+        1120,
+        -10,
+        880,
+        1770
+      ],
+      "color": "#444",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1.2100000000000015,
+      "offset": [
+        1096.7291681731658,
+        397.69773714998905
+      ]
+    },
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0
+  },
+  "version": 0.4
+}
