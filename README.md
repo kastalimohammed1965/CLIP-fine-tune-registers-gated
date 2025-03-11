@@ -6,7 +6,19 @@ CLIP-fine-tune-registers-gated
 - Want a retrieval model? Low modality gap? Read on! ✅🌟
 - Want zero-shot accuracy & Text Encoders for gen-AI? You're better off using my [classic CLIP-fine-tune repo](https://github.com/zer0int/CLIP-fine-tune). 👈⚠️
 - Jump to HF models: [huggingface.co/zer0int/CLIP-Registers-Gated_MLP-ViT-L-14](https://huggingface.co/zer0int/CLIP-Registers-Gated_MLP-ViT-L-14)
+- Jump to HF Long-CLIP models: [huggingface.co/zer0int/LongCLIP-Registers-Gated_MLP-ViT-L-14/](https://huggingface.co/zer0int/LongCLIP-Registers-Gated_MLP-ViT-L-14)
+------
+### Update: 11/MAR/2025
 
+- Added Long-CLIP (248 tokens) version! 🎉
+- Same syntax, except prepend `long` to everything. :)
+- Download the original model to fine-tune it (I have a .safetensors version so you don't need to load a danger-pickle!), or download my already fine-tuned models (including Text-Encoder-Only version for t2i / t2v / gen-AI):
+- 👉 [huggingface.co/zer0int/LongCLIP-Registers-Gated_MLP-ViT-L-14/](https://huggingface.co/zer0int/LongCLIP-Registers-Gated_MLP-ViT-L-14)
+
+![modality-gap-before-after](https://github.com/user-attachments/assets/4a68d089-a2bf-4ad3-a21e-e174c5ecaddf)
+
+
+### 1st commit: 09/MAR/2025
 ------
 - This was initally an attempt to implement [Paper: Vision Transformers Need Registers](https://arxiv.org/abs/2309.16588v2) 
 - ...By just fine-tuning a pre-trained model (yes, a pretty bold (or crazy) idea! 🤣).
